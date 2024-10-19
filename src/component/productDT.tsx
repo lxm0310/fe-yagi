@@ -1,18 +1,43 @@
-import { Bath, Bed, LayoutGrid, MapPin, Wifi } from "lucide-react";
+import {
+  Armchair,
+  Bath,
+  Bed,
+  Coffee,
+  Dumbbell,
+  HandPlatter,
+  LayoutGrid,
+  MapPin,
+  Martini,
+  Snowflake,
+  WashingMachine,
+  Wifi,
+  X,
+} from "lucide-react";
 import React, { useState } from "react";
+import Evaluate from "./Evaluate";
+import AllEvaluate from "./allEvaluate";
+import FormComponent from "./formCmt";
+import FormCmt from "./formCmt";
+import Similar from "./similar";
+import CardCarousel from "./CardCarousel ";
 
 const ProductDT = () => {
   // Image sources for the slideshow
   const images = [
     "src/upload/dt1.png",
-    "src/upload/dt1.png",
-    "src/upload/dt1.png",
-    "src/upload/dt1.png",
-    "src/upload/dt1.png",
+    "src/upload/dt2.png",
+    "src/upload/dt3.png",
+    "src/upload/dt4.png",
+    "src/upload/dt5.png",
+  ];
+  const roomImages = [
+    "src/upload/pr1.png",
+    "src/upload/pr1.png",
+    "src/upload/pr1.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // Function to show the next image
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -29,7 +54,13 @@ const ProductDT = () => {
   const showImage = (index: any) => {
     setCurrentIndex(index);
   };
-
+  //open modal
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
       <div className="container">
@@ -176,6 +207,9 @@ const ProductDT = () => {
           </div>
         </div>
         <div className="option m-7">
+          <h1 className="text-[24px] text-[#000000CC] mb-6 font-bold">
+            Chọn Phòng
+          </h1>
           <div className="border rounded shadow-md w-[885px] h-[230px] mb-5">
             <p className="bg-[#F5A52DBA] w-[138px] h-[21px] float-right text-center rounded text-xs p-1 m-2 text-[#FFFFFF]">
               Rẻ nhất hôm nay
@@ -214,12 +248,12 @@ const ProductDT = () => {
                     </div>
                   </div>
                 </div>
-                <a
-                  href=""
-                  className="text-[#022747BD] text-[12px] hover:underline"
+                <button
+                  onClick={openModal}
+                  className="text-[#022747BD] text-[12px] hover:underline focus:outline-none"
                 >
                   Ảnh phòng và chi tiết
-                </a>
+                </button>
               </div>
               <div className="m-7">
                 <div>
@@ -270,12 +304,12 @@ const ProductDT = () => {
                     </div>
                   </div>
                 </div>
-                <a
-                  href=""
-                  className="text-[#022747BD] text-[12px] hover:underline"
+                <button
+                  onClick={openModal}
+                  className="text-[#022747BD] text-[12px] hover:underline focus:outline-none"
                 >
                   Ảnh phòng và chi tiết
-                </a>
+                </button>
               </div>
               <div className="m-7">
                 <div>
@@ -326,12 +360,12 @@ const ProductDT = () => {
                     </div>
                   </div>
                 </div>
-                <a
-                  href=""
-                  className="text-[#022747BD] text-[12px] hover:underline"
+                <button
+                  onClick={openModal}
+                  className="text-[#022747BD] text-[12px] hover:underline focus:outline-none"
                 >
                   Ảnh phòng và chi tiết
-                </a>
+                </button>
               </div>
               <div className="m-7">
                 <div>
@@ -344,6 +378,89 @@ const ProductDT = () => {
               </div>
             </div>
           </div>
+        </div>
+        {/* moda detail */}
+
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <div className="bg-white p-6 rounded-lg w-[800px] relative">
+              <button
+                className="absolute top-2 right-2 text-black text-xl"
+                onClick={closeModal}
+              >
+                <X />
+              </button>
+              <h2 className="text-xl font-bold mb-4">Chi tiết ảnh phòng</h2>
+              <div className="flex justify-around gap-2">
+                {roomImages.map((image, index) => (
+                  <img
+                    key={index}
+                    className="w-[200px] h-[150px] object-cover"
+                    src={image}
+                    alt={`Room ${index + 1}`}
+                  />
+                ))}
+              </div>
+              <div className="grid grid-cols-3 ml-[50px] mt-3">
+                <div className="flex items-center mb-1">
+                  <Wifi className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">
+                    Wifi miễn phí
+                  </span>
+                </div>
+                <div className="flex items-center mb-1">
+                  <Bath className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">
+                    Vòi Hoa sen Và Bồn Tắm
+                  </span>
+                </div>
+                <div className="flex items-center mb-1">
+                  <Snowflake className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">Điều Hòa</span>
+                </div>
+
+                <div className="flex items-center mb-1">
+                  <WashingMachine className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">Máy giặt</span>
+                </div>
+                <div className="flex items-center mb-1">
+                  <Armchair className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">Bàn Ghế</span>
+                </div>
+                <div className="flex items-center mb-1">
+                  <Martini className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">Mini Bar</span>
+                </div>
+
+                <div className="flex items-center mb-1">
+                  <Dumbbell className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">
+                    Phòng Gym
+                  </span>
+                </div>
+                <div className="flex items-center mb-1">
+                  <HandPlatter className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">Nhà Hàng</span>
+                </div>
+                <div className="flex items-center mb-1">
+                  <Coffee className="w-4 h-4 mr-1 text-[#022747BD]" />
+                  <span className="text-[#022747BD] text-[15px]">Càfe</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="Evaluate">
+          <Evaluate />
+        </div>
+        <div className="allEvaluate">
+          <AllEvaluate />
+        </div>
+        <div className="FormCmt ml-6">
+          <FormCmt />
+        </div>
+        <div className="similarHotel">
+          <CardCarousel />
         </div>
       </div>
     </>

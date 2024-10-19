@@ -12,12 +12,13 @@ const Header = (props: Props) => {
           <div className="flex items-center justify-between p-4 bg-[#00396B96] mb-4">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link to={"/homepage"}></Link>
-              <img
-                src="src/upload/logo.png"
-                alt="Hotel Logo"
-                className="inline-block w-[214.05px] h-[85.59px]"
-              />
+              <Link to={""}>
+                <img
+                  src="src/upload/logo.png"
+                  alt="Hotel Logo"
+                  className="inline-block w-[214.05px] h-[85.59px]"
+                />
+              </Link>
             </div>
 
             {/* Navigation */}

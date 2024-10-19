@@ -4,6 +4,7 @@ import BannerBot from "../component/BannerBot";
 import ContentBot from "../component/ContentBot";
 import SearchForm from "../component/searchForm";
 import CategoryService from "../component/categoryService";
+import { Link } from "react-router-dom";
 type Props = {};
 const images = [
   "src/upload/banner1.png",
@@ -46,13 +47,19 @@ const Homepage = (props: Props) => {
             {/* Login/Register Button */}
             <div className="absolute right-3 top-[20px] mt-[130px]">
               <div className="bg-blue-600 text-white w-[190.27px] h-[43px] px-4 py-2 rounded hover:bg-blue-700">
-                <a className="hover:underline hover:text-yellow-400" href="#">
+                <Link
+                  className="hover:underline hover:text-yellow-400"
+                  to={"/register"}
+                >
                   Đăng ký
-                </a>{" "}
+                </Link>{" "}
                 /
-                <a className="hover:underline hover:text-yellow-400" href="#">
+                <Link
+                  className="hover:underline hover:text-yellow-400"
+                  to={"/login"}
+                >
                   Đăng nhập
-                </a>
+                </Link>
               </div>
             </div>
             <div className="bg-black bg-opacity-40 p-8 rounded-md max-w-lg text-white mt-[200px]">
