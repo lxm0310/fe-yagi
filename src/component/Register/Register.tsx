@@ -1,8 +1,15 @@
 import React from "react";
-
+import { FaTimes } from 'react-icons/fa'
+import { Link, useNavigate } from 'react-router-dom';
 const Register = () => {
+  const navigate = useNavigate();
+
+  const handleClose = () => {
+    navigate('/');
+  }
   return (
     <div className="w-full h-screen flex items-start">
+
       <div className="relative w-1/2 h-full flex flex-col">
         <div className="absolute top-[20%] left-[10%] flex flex-col p-4">
           <h1 className=" text-[#ffffff] font-montserrat text-4xl font-bold leading-[58.51px] text-left">
@@ -18,8 +25,16 @@ const Register = () => {
           alt=""
         />
       </div>
+      <button
+          onClick={handleClose}
+          className=" text-red-500font-bold py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition duration-300 ease-in-out flex items-center justify-center"
+        >
+          <FaTimes className="h-4 w-4" />
+        </button>
       <div className="w-1/2 h-full bg-[#ffffff] flex flex-col p-8 justify-between">
+        
         <div className="w-full ml-[120px] mt-20 flex flex-col max-w-[500px] ">
+
           <h3 className="font-montserrat text-3xl font-bold mb-2">Đăng nhập</h3>
           <p className="font-montserrat  text-base  text-[16px] font-medium leading-[18.29px] text-left">
             Xin chào, hãy nhập thông tin để đăng kí.
@@ -32,7 +47,7 @@ const Register = () => {
                 className="font-montserrat text-base  font-medium leading-[19.5px] text-left"
               >
                 Họ
-                <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                <span className='text-red-500'>*</span>
               </label>
               <input
                 id="lastName"
@@ -46,7 +61,7 @@ const Register = () => {
                 className="font-montserrat text-base font-thin leading-[19.5px] text-left "
               >
                 Tên
-                <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                <span className='text-red-500'>*</span>
               </label>
               <input
                 id="firstName"
@@ -63,7 +78,7 @@ const Register = () => {
                 className="font-montserrat text-base font-medium leading-[19.5px] text-left "
               >
                 Email
-                <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                <span className='text-red-500'>*</span>
               </label>
               <input
                 id="email"
@@ -77,7 +92,7 @@ const Register = () => {
                 className="font-montserrat text-base font-medium leading-[19.5px] text-left "
               >
                 Số điện thoại
-                <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                <span className='text-red-500'>*</span>
               </label>
               <input
                 id="phonenumber"
@@ -94,7 +109,7 @@ const Register = () => {
             >
               Mật khẩu
             </label>
-            <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+            <span className='text-red-500'>*</span>
           </div>
           <input
             id="password"
@@ -107,7 +122,7 @@ const Register = () => {
               Đăng kí
             </button>
             <button className="w-2/3 text-[#0460B1D6] my-1  bg-[#f9fafbd6] border-2 boder-[#0460B1D6] rounded-md p-2 text-center flex items-center justify-center">
-              Đăng nhập
+             <Link to='/login'>Đăng nhập</Link> 
             </button>
             <div className="w-full flex flex-col items-center justify-center ">
               <p className="text-md  text-black/80  bg-[#ffffff]">or</p>

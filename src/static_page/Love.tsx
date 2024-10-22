@@ -16,7 +16,7 @@ const Love = (props: Props) => {
         <div className="relative h-[300px]">
           <div style={{backgroundImage: 'url("src/upload/bfBot.png")',backgroundSize: "cover", }}
             className="absolute w-full h-[399px] ">
-            <p className="italic text-[36px] text-center mt-[150px] text-[#FFFFFF]">
+            <p className="font-taviraj text-[61px]  italic font-extrabold  text-center mt-[150px] text-[#FFFFFF]">
             Tận hưởng không gian thư giãn
             </p>
           </div>

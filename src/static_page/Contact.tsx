@@ -31,9 +31,9 @@ const Contact = (props: Props) => {
       <div className="container mb-[100px] w-full">
        
         <div className="relative h-[300px]">
-          <div style={{backgroundImage: 'url("src/upload/lienhe.jpeg")',backgroundSize: "cover",backgroundPosition:"0px" }}
+          <div style={{backgroundImage: 'url("src/assets/img/lienhe.jpg")',backgroundSize: "cover",backgroundPosition:"0px" }}
             className="absolute w-full h-[399px] ">
-            <p className="italic text-[36px] text-center mt-[150px] text-[#FFFFFF]">
+            <p className="font-taviraj text-[61px]  italic font-extrabold  text-center mt-[150px] text-[#FFFFFF]">
             Liên hệ
             </p>
           </div>
@@ -42,7 +42,7 @@ const Contact = (props: Props) => {
         <div className="max-w-6xl mx-auto p-4 flex flex-col md:flex-row gap-8">
 
       <div className="md:w-1/2">
-        <h1 className="text-2xl font-bold text-orange-500 mb-4">
+        <h1 className="font-taviraj text-[41px] font-bold text-[#ED9A1F] mb-4">
           Tổng Công ty Dịch vụ<br />
           Khách sạn YaGi
         </h1>
@@ -73,7 +73,7 @@ const Contact = (props: Props) => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex gap-4">
             <div className="flex-1">
-              <label htmlFor="lastName" className="block mb-1">Họ *</label>
+              <label htmlFor="lastName" className="block mb-1">Họ <span className='text-red-500'>*</span></label>
               <input
                 type="text"
                 id="lastName"
@@ -85,7 +85,7 @@ const Contact = (props: Props) => {
               />
             </div>
             <div className="flex-1">
-              <label htmlFor="firstName" className="block mb-1">Tên *</label>
+              <label htmlFor="firstName" className="block mb-1">Tên <span className='text-red-500'>*</span></label>
               <input
                 type="text"
                 id="firstName"
@@ -98,7 +98,7 @@ const Contact = (props: Props) => {
             </div>
           </div>
           <div>
-            <label htmlFor="email" className="block mb-1">Email *</label>
+            <label htmlFor="email" className="block mb-1">Email <span className='text-red-500'>*</span></label>
             <input
               type="email"
               id="email"
@@ -110,7 +110,7 @@ const Contact = (props: Props) => {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block mb-1">Số điện thoại *</label>
+            <label htmlFor="phone" className="block mb-1">Số điện thoại <span className='text-red-500'>*</span></label>
             <input
               type="tel"
               id="phone"

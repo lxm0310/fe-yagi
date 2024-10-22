@@ -22,20 +22,20 @@ const Header = (props: Props) => {
             </div>
 
             {/* Navigation */}
-            <nav className="flex-grow text-white text-[24px] text-center space-x-20">
-              <a href="#" className="hover:text-yellow-400 hover:underline">
+            <nav className="flex-grow font-judson text-white text-[25px] text-center space-x-20">
+              <a href="/" className="hover:text-yellow-400 hover:underline">
                 Trang chủ
               </a>
-              <a href="#" className="hover:text-yellow-400 hover:underline">
+              <a href="/gioithieu" className="hover:text-yellow-400 hover:underline">
                 Về chúng tôi
               </a>
-              <a href="#" className="hover:text-yellow-400 hover:underline">
+              <a href="/dichvu" className="hover:text-yellow-400 hover:underline">
                 Dịch vụ
               </a>
-              <a href="#" className="hover:text-yellow-400 hover:underline">
+              <a href="/tintuc" className="hover:text-yellow-400 hover:underline">
                 Tin tức
               </a>
-              <a href="#" className="hover:text-yellow-400 hover:underline">
+              <a href="/lienhe" className="hover:text-yellow-400 hover:underline">
                 Liên hệ
               </a>
             </nav>

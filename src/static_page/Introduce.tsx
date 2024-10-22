@@ -8,16 +8,16 @@ const Introduce = (props: Props) => {
     <div className="container mb-[100px] w-full">
      
       <div className="relative h-[300px]">
-        <div style={{backgroundImage: 'url("src/upload/gthieu.jpeg")',backgroundSize: "cover",backgroundPosition:"0px"}}
+        <div style={{backgroundImage: 'url("src/assets/img/vechungtoi.jpg")',backgroundSize: "cover",backgroundPosition:"0px"}}
           className="absolute w-full h-[399px] ">
-          <p className="italic text-[36px] text-center mt-[150px] text-[#FFFFFF]">
+          <p className="font-taviraj text-[61px]  italic font-extrabold  text-center mt-[150px] text-[#FFFFFF]">
           Về YaGi Group
           </p>
         </div>
       </div>
       <div className="content mt-[150px]">
       <div className="max-w-3xl mx-auto p-4 font-sans">
-      <h1 className="text-3xl font-bold  text-blue-600 mb-6 italic">Tầm nhìn</h1>
+      <h1 className="text-3xl font-bold text-[#2B6395] mb-6 italic">Tầm nhìn</h1>
       
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-2 pl-12">Thương hiệu khách sạn hàng đầu Việt Nam.</h2>
@@ -32,7 +32,7 @@ const Introduce = (props: Props) => {
     </div>
       </section>
 
-      <h1 className="text-3xl font-bold  text-blue-600 mb-6 italic">Sứ mệnh</h1>
+      <h1 className="text-3xl font-bold  text-[#2B6395]  mb-6 italic">Sứ mệnh</h1>
       
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-2 pl-12">Mang lại trải nghiệm, hạnh phúc đến cho khách hàng, đối tác, 
@@ -52,7 +52,7 @@ const Introduce = (props: Props) => {
       </section>
 
 
-      <h1 className="text-3xl font-bold   text-blue-600 mb-6 italic">Giá trị cốt lõi</h1>
+      <h1 className="text-3xl font-bold   text-[#2B6395]  mb-6 italic">Giá trị cốt lõi</h1>
       
       <section className="mb-8">
        

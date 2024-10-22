@@ -6,7 +6,7 @@ const CategoryService = (props: Props) => {
   return (
     <>
       <div className="container">
-        <div className="flex justify-between m-10 gap-[14px]">
+        <div className="font-taviraj italic flex justify-between m-10 gap-[14px]">
           <div
             style={{
               backgroundImage: 'url("src/upload/sangtrong.png")',

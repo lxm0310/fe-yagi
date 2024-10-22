@@ -63,10 +63,11 @@ const Homepage = (props: Props) => {
               </div>
             </div>
             <div className="bg-black bg-opacity-40 p-8 rounded-md max-w-lg text-white mt-[200px]">
-              <p className="text-yellow-300 mb-2">
+              <p className=" font-taviraj text-yellow-300 mb-2 text-[27px]">
                 Từ ngày 01/10/2024-30/12/2024
               </p>
-              <h1 className="text-2xl font-bold">
+              <p className="font-taviraj  font-700 italic text-[27px] text-left">Ưu đãi mùa du lịch</p>
+              <h1 className="font-taviraj italic text-[40px] font-bold">
                 Hưởng ưu đãi từ 15% cho kỳ nghỉ tiếp theo
               </h1>
               <a
