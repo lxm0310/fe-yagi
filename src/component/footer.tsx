@@ -9,85 +9,101 @@ const Footer = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="bg-background text-foreground p-6">
-        <div className="flex items-center gap-[200px]">
-          <div className="logo ml-[30px]">
-            <img src="src/upload/logo.png" alt="" />
+      <div className="bg-background text-foreground p-4 sm:p-6">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-[200px]">
+          <div className="logo">
+            <img src="src/upload/logo.png" alt="" className="w-32 lg:w-auto" />
           </div>
-          <div>
+          <div className="w-full lg:w-auto">
             <div>
-              <nav className="flex-grow text-white text-[20px] text-center space-x-7">
-                <a href="#" className="hover:text-yellow-400 hover:underline">
+              <nav className="flex flex-wrap justify-center lg:justify-start text-white text-base lg:text-[20px] text-center space-y-2 lg:space-y-0 lg:space-x-7">
+                <a
+                  href="#"
+                  className="hover:text-yellow-400 hover:underline block lg:inline-block w-full lg:w-auto"
+                >
                   Sang trọng
                 </a>
-                <a href="#" className="hover:text-yellow-400 hover:underline">
+                <a
+                  href="#"
+                  className="hover:text-yellow-400 hover:underline block lg:inline-block w-full lg:w-auto"
+                >
                   Tiện nghi
                 </a>
-                <a href="#" className="hover:text-yellow-400 hover:underline">
+                <a
+                  href="#"
+                  className="hover:text-yellow-400 hover:underline block lg:inline-block w-full lg:w-auto"
+                >
                   Lãng mạn
                 </a>
-                <a href="#" className="hover:text-yellow-400 hover:underline">
+                <a
+                  href="#"
+                  className="hover:text-yellow-400 hover:underline block lg:inline-block w-full lg:w-auto"
+                >
                   Phong cách
                 </a>
-                <a href="#" className="hover:text-yellow-400 hover:underline">
+                <a
+                  href="#"
+                  className="hover:text-yellow-400 hover:underline block lg:inline-block w-full lg:w-auto"
+                >
                   Thư giãn
                 </a>
               </nav>
             </div>
-            <hr className="mt-[46px] mb-[46px] w-[801px]" />
-            <div className="flex flex-row gap-4">
-              <div className="basis-1/4">
-                <p className="text-[24px]">TỔNG CÔNG TY KHÁCH SẠN YAGI</p>
+            <hr className="my-6 lg:my-[46px] w-full lg:w-[801px]" />
+            <div className="flex flex-col lg:flex-row gap-4">
+              <div className="w-full lg:w-1/4 text-center lg:text-left">
+                <p className="text-xl lg:text-[24px]">
+                  TỔNG CÔNG TY KHÁCH SẠN YAGI
+                </p>
               </div>
-              <div className="basis-1/2">
-                <div className="flex items-center mb-2">
+              <div className="w-full lg:w-1/2">
+                <div className="flex items-center mb-2 justify-center lg:justify-start">
                   <img
                     alt="location-pin"
                     src="src/upload/iclc.png"
-                    className="mr-2"
+                    className="mr-2 w-4 h-4"
                   />
-                  <span className="text-muted-foreground">
+                  <span className="text-muted-foreground text-sm lg:text-base">
                     Trịnh Văn Bồ, Xuân Phương, Nam Từ Liêm, Hà Nội
                   </span>
                 </div>
-                <div className="flex items-center mb-2">
+                <div className="flex items-center mb-2 justify-center lg:justify-start">
                   <img
                     alt="phone-icon"
                     src="src/upload/icF.png"
-                    className="mr-2"
+                    className="mr-2 w-4 h-4"
                   />
-                  <span className="text-muted-foreground">
+                  <span className="text-muted-foreground text-sm lg:text-base">
                     (84-28) - 927 5887
                   </span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center justify-center lg:justify-start">
                   <img
                     alt="email-icon"
                     src="src/upload/icE.png"
-                    className="mr-2"
+                    className="mr-2 w-4 h-4"
                   />
-                  <span className="text-muted-foreground">
+                  <span className="text-muted-foreground text-sm lg:text-base">
                     inforyagi@gmail.com.vn
                   </span>
                 </div>
               </div>
-              <div></div>
-              <div className="basis-1/4 mt-[30px]">
-                <div className="grid grid-cols-3">
-                  <img src="src/upload/f.png" alt="" />
-                  <img src="src/upload/p.png" alt="" />
-                  <img src="src/upload/p.png" alt="" />
+              <div className="w-full lg:w-1/4 mt-4 lg:mt-[30px]">
+                <div className="grid grid-cols-3 gap-2 justify-items-center lg:justify-items-start">
+                  <img src="src/upload/f.png" alt="" className="w-8 h-8" />
+                  <img src="src/upload/p.png" alt="" className="w-8 h-8" />
+                  <img src="src/upload/p.png" alt="" className="w-8 h-8" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <hr className="w-full mt-[70px] mb-[50px]" />
-        <div className="flex justify-between">
-          <div>
-            <p>@2020 YaGiHotel Group</p>
+        <hr className="w-full my-6 lg:mt-[70px] lg:mb-[50px]" />
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <div className="mb-4 lg:mb-0">
+            <p className="text-sm lg:text-base">@2020 YaGiHotel Group</p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 text-sm lg:text-base">
             <p>Sơ đồ website</p>
             <p>Liên hệ</p>
           </div>

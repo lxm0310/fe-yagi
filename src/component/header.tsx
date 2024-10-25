@@ -5,6 +5,7 @@ type Props = {};
 
 const Header = (props: Props) => {
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +22,10 @@ const Header = (props: Props) => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -40,35 +45,61 @@ const Header = (props: Props) => {
               </Link>
             </div>
 
+            {/* Hamburger Menu for Mobile */}
+            <div className="md:hidden">
+              <button onClick={toggleMenu} className="text-white">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
             {/* Navigation */}
-            <nav className="menu flex-grow text-white text-[16px] md:text-[24px] text-center space-x-4 md:space-x-20">
-              <Link to="/" className="hover:text-yellow-400 hover:underline">
-                Trang chủ
-              </Link>
-              <Link
-                to="/gioithieu"
-                className="hover:text-yellow-400 hover:underline"
-              >
-                Về chúng tôi
-              </Link>
-              <Link
-                to="/dichvu"
-                className="hover:text-yellow-400 hover:underline"
-              >
-                Dịch vụ
-              </Link>
-              <Link
-                to="/tintuc"
-                className="hover:text-yellow-400 hover:underline"
-              >
-                Tin tức
-              </Link>
-              <Link
-                to="/lienhe"
-                className="hover:text-yellow-400 hover:underline"
-              >
-                Liên hệ
-              </Link>
+            <nav
+              className={`md:flex md:flex-grow md:items-center md:justify-center ${
+                isMenuOpen ? "block" : "hidden"
+              } absolute md:relative top-full left-0 w-full md:w-auto bg-[#00396B96] md:bg-transparent`}
+            >
+              <div className="flex flex-col md:flex-row text-white text-[16px] md:text-[24px] text-center space-y-4 md:space-y-0 md:space-x-20 p-4 md:p-0">
+                <Link to="/" className="hover:text-yellow-400 hover:underline">
+                  Trang chủ
+                </Link>
+                <Link
+                  to="/gioithieu"
+                  className="hover:text-yellow-400 hover:underline"
+                >
+                  Về chúng tôi
+                </Link>
+                <Link
+                  to="/dichvu"
+                  className="hover:text-yellow-400 hover:underline"
+                >
+                  Dịch vụ
+                </Link>
+                <Link
+                  to="/tintuc"
+                  className="hover:text-yellow-400 hover:underline"
+                >
+                  Tin tức
+                </Link>
+                <Link
+                  to="/lienhe"
+                  className="hover:text-yellow-400 hover:underline"
+                >
+                  Liên hệ
+                </Link>
+              </div>
             </nav>
           </div>
         </header>
@@ -76,7 +107,7 @@ const Header = (props: Props) => {
       {showScrollButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300"
+          className="fixed bottom-3 right-3 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

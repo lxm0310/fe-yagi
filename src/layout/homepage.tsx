@@ -78,7 +78,7 @@ const Homepage = (props: Props) => {
               </div>
             </div>
           </main>
-          <div className="container mx-auto px-4 py-12 space-y-12">
+          <div className="w-full mx-auto px-4 py-12 space-y-12">
             <CategoryService />
             <SearchForm />
             <CategoryLocation />

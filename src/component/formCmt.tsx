@@ -20,8 +20,8 @@ const FormCmt = () => {
   };
 
   return (
-    <div className="flex justify-start">
-      <div className="w-[890px] bg-white p-8 rounded-lg shadow-lg">
+    <div className="flex justify-start w-full">
+      <div className="w-full max-w-[890px] bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg">
         <form onSubmit={handleSubmit}>
           {/* Tiêu đề */}
           <div className="mb-4">
@@ -61,8 +61,8 @@ const FormCmt = () => {
           </div>
 
           {/* Tên và Email */}
-          <div className="flex space-x-4 mb-4">
-            <div className="w-1/2">
+          <div className="flex flex-col sm:flex-row sm:space-x-4 mb-4">
+            <div className="w-full sm:w-1/2 mb-4 sm:mb-0">
               <label
                 htmlFor="name"
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -79,7 +79,7 @@ const FormCmt = () => {
                 placeholder="Tên"
               />
             </div>
-            <div className="w-1/2">
+            <div className="w-full sm:w-1/2">
               <label
                 htmlFor="email"
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -102,7 +102,7 @@ const FormCmt = () => {
           <div className="text-left">
             <button
               type="submit"
-              className="bg-blue-500 w-[177px] hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-blue-500 w-full sm:w-[177px] hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Gửi
             </button>

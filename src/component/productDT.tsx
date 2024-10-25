@@ -63,17 +63,17 @@ const ProductDT = () => {
   };
   return (
     <>
-      <div className="w-full ">
-        <div className="">
+      <div className="w-full px-4 md:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="product flex flex-col lg:flex-row justify-center gap-5">
-            <div className="cntRight">
+            <div className="cntRight w-full lg:w-2/3">
               <div className="title mb-3">
-                <h1 className="text-[20px] font-bold text-[#242222CC]">
+                <h1 className="text-xl md:text-2xl font-bold text-[#242222CC]">
                   Grand Resort Sapa-Lào Cai
                 </h1>
                 <div className="flex items-center">
-                  <MapPin className=""></MapPin>
-                  <p className="text-[13px]">
+                  <MapPin className="w-4 h-4 mr-1"></MapPin>
+                  <p className="text-sm md:text-base">
                     Sapa-Lào Cai - {""}
                     <a href="#" className="text-blue-600 hover:underline">
                       Xem trên bản đồ
@@ -92,7 +92,7 @@ const ProductDT = () => {
                   &#10094;
                 </button>
                 <img
-                  className="w-full lg:w-[884px] h-[300px] lg:h-[592px] object-cover"
+                  className="w-full h-[300px] md:h-[400px] lg:h-[592px] object-cover"
                   src={images[currentIndex]}
                   alt="Resort"
                 />
@@ -106,11 +106,11 @@ const ProductDT = () => {
               </div>
 
               {/* Thumbnails */}
-              <div className="flex gap-[17px] mt-2 overflow-x-auto">
+              <div className="flex gap-2 md:gap-4 mt-2 overflow-x-auto">
                 {images.map((image, index) => (
                   <img
                     key={index}
-                    className={`w-[100px] lg:w-[163px] h-[70px] lg:h-[109px] object-cover cursor-pointer ${
+                    className={`w-[80px] md:w-[120px] lg:w-[163px] h-[60px] md:h-[80px] lg:h-[109px] object-cover cursor-pointer ${
                       index === currentIndex ? "opacity-100" : "opacity-60"
                     } transition-opacity duration-300 hover:opacity-100`}
                     src={image}
@@ -120,9 +120,9 @@ const ProductDT = () => {
                 ))}
               </div>
 
-              <div className="des w-full lg:w-[858px] h-[198px] mt-6">
-                <p className="text-[24px] font-bold">Mô tả</p>
-                <span>
+              <div className="des w-full mt-6">
+                <p className="text-xl md:text-2xl font-bold">Mô tả</p>
+                <span className="text-sm md:text-base">
                   Silk Path Grand Resort & Spa Sapa tọa lạc trên ngọn đồi riêng
                   tuyệt đẹp với tầm nhìn ôm trọn dãy núi Hoàng Liên Sơn bao
                   quanh là mây trắng bồng bềnh, cảm hứng từ những tòa lâu đài
@@ -136,10 +136,10 @@ const ProductDT = () => {
               </div>
             </div>
 
-            <div className="cntLeft mt-[40px]">
+            <div className="cntLeft w-full lg:w-1/3 mt-6 lg:mt-0">
               {/* Left side content (unchanged) */}
-              <div className="p-4 bg-card rounded-lg shadow-md m-4">
-                <div className="flex items-center gap-2">
+              <div className="p-4 bg-card rounded-lg shadow-md">
+                <div className="flex flex-wrap items-center gap-2">
                   <button className="border-inherit border w-[44px] h-[42px] p-3">
                     <img src="src/upload/tim.png" alt="" />
                   </button>
@@ -154,7 +154,7 @@ const ProductDT = () => {
                     <p className="text-[12px] ml-2">(1 Review)</p>
                   </div>
                 </div>
-                <button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-3 py-1 rounded">
+                <button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-3 py-1 rounded mt-2">
                   Giá thấp nhất bao gồm:
                 </button>
                 <div className="mt-4">
@@ -210,190 +210,82 @@ const ProductDT = () => {
               </div>
             </div>
           </div>
-          <div className="option m-7">
-            <h1 className="text-[24px] text-[#000000CC] mb-6 font-bold">
+          <div className="option my-7">
+            <h1 className="text-xl md:text-2xl text-[#000000CC] mb-6 font-bold">
               Chọn Phòng
             </h1>
-            <div className="border rounded shadow-md w-full lg:w-[885px] h-[230px] mb-5">
-              <p className="bg-[#F5A52DBA] w-[138px] h-[21px] float-right text-center rounded text-xs p-1 m-2 text-[#FFFFFF]">
-                Rẻ nhất hôm nay
-              </p>
-              <div className="flex flex-col lg:flex-row gap-8 mt-10 ml-[20px]">
-                <div>
-                  <img src="src/upload/pr1.png" alt="" />
-                </div>
-                <div className="m-4">
-                  <p className="text-[15px] font-bold mb-5">Giường đôi</p>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <div className="flex items-center mb-1">
-                        <LayoutGrid className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          15m2
-                        </span>
+            {[1, 2, 3].map((_, index) => (
+              <div key={index} className="border rounded shadow-md w-full mb-5">
+                <p className="bg-[#F5A52DBA] w-[138px] h-[21px] float-right text-center rounded text-xs p-1 m-2 text-[#FFFFFF]">
+                  Rẻ nhất hôm nay
+                </p>
+                <div className="flex flex-col md:flex-row gap-4 md:gap-8 p-4">
+                  <div className="w-full md:w-1/4">
+                    <img
+                      src="src/upload/pr1.png"
+                      alt=""
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <div className="w-full md:w-1/2">
+                    <p className="text-[15px] font-bold mb-3">Giường đôi</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <div className="flex items-center mb-1">
+                          <LayoutGrid className="w-4 h-4 mr-1 text-[#022747BD]" />
+                          <span className="text-[#022747BD] text-[13px] md:text-[15px]">
+                            15m2
+                          </span>
+                        </div>
+                        <div className="flex items-center mb-1">
+                          <Wifi className="w-4 h-4 mr-1 text-[#022747BD]" />
+                          <span className="text-[#022747BD] text-[13px] md:text-[15px]">
+                            Wifi miễn phí
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-center mb-1">
-                        <Wifi className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          Wifi miễn phí
-                        </span>
+                      <div>
+                        <div className="flex items-center mb-1">
+                          <Bed className="w-4 h-4 mr-1 text-[#022747BD]" />
+                          <span className="text-[#022747BD] text-[13px] md:text-[15px]">
+                            2 giường đơn
+                          </span>
+                        </div>
+                        <div className="flex items-center mb-1">
+                          <Bath className="w-4 h-4 mr-1 text-[#022747BD]" />
+                          <span className="text-[#022747BD] text-[13px] md:text-[15px]">
+                            Vòi sen và bồn tắm
+                          </span>
+                        </div>
                       </div>
                     </div>
+                    <button
+                      onClick={openModal}
+                      className="text-[#022747BD] text-[12px] hover:underline focus:outline-none mt-2"
+                    >
+                      Ảnh phòng và chi tiết
+                    </button>
+                  </div>
+                  <div className="w-full md:w-1/4 mt-4 md:mt-0">
                     <div>
-                      <div className="flex items-center mb-1">
-                        <Bed className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          2 giường đơn
-                        </span>
-                      </div>
-                      <div className="flex items-center mb-1">
-                        <Bath className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          Vòi sen và bồn tắm
-                        </span>
-                      </div>
+                      <span className="text-xl md:text-2xl font-bold">
+                        899.000₫
+                      </span>
+                      <span className="text-gray-600 text-sm">/đêm</span>
                     </div>
+                    <button className="border-[#0460B196] rounded border text-[#000000] font-bold w-full h-[47px] mt-2 hover:bg-[#0460B196]">
+                      Cập nhật
+                    </button>
                   </div>
-                  <button
-                    onClick={openModal}
-                    className="text-[#022747BD] text-[12px] hover:underline focus:outline-none"
-                  >
-                    Ảnh phòng và chi tiết
-                  </button>
-                </div>
-                <div className="m-7">
-                  <div>
-                    <span className="text-2xl font-bold">899.000₫</span>
-                    <span className="text-gray-600 text-sm">/đêm</span>
-                  </div>
-                  <button className="border-[#0460B196] rounded border text-[#000000] font-bold w-full h-[47px] mt-2 hover:bg-[#0460B196]">
-                    Cập nhật
-                  </button>
                 </div>
               </div>
-            </div>
-            <div className="border rounded shadow-md w-full lg:w-[885px] h-[230px] mb-5">
-              <p className="bg-[#F5A52DBA] w-[138px] h-[21px] float-right text-center rounded text-xs p-1 m-2 text-[#FFFFFF]">
-                Rẻ nhất hôm nay
-              </p>
-              <div className="flex flex-col lg:flex-row gap-8 mt-10 ml-[20px]">
-                <div>
-                  <img src="src/upload/pr1.png" alt="" />
-                </div>
-                <div className="m-4">
-                  <p className="text-[15px] font-bold mb-5">Giường đôi</p>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <div className="flex items-center mb-1">
-                        <LayoutGrid className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          15m2
-                        </span>
-                      </div>
-                      <div className="flex items-center mb-1">
-                        <Wifi className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          Wifi miễn phí
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex items-center mb-1">
-                        <Bed className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          2 giường đơn
-                        </span>
-                      </div>
-                      <div className="flex items-center mb-1">
-                        <Bath className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          Vòi sen và bồn tắm
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    onClick={openModal}
-                    className="text-[#022747BD] text-[12px] hover:underline focus:outline-none"
-                  >
-                    Ảnh phòng và chi tiết
-                  </button>
-                </div>
-                <div className="m-7">
-                  <div>
-                    <span className="text-2xl font-bold">899.000₫</span>
-                    <span className="text-gray-600 text-sm">/đêm</span>
-                  </div>
-                  <button className="border-[#0460B196] rounded border text-[#000000] font-bold w-full h-[47px] mt-2 hover:bg-[#0460B196]">
-                    Cập nhật
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="border rounded shadow-md w-full lg:w-[885px] h-[230px] mb-5">
-              <p className="bg-[#F5A52DBA] w-[138px] h-[21px] float-right text-center rounded text-xs p-1 m-2 text-[#FFFFFF]">
-                Rẻ nhất hôm nay
-              </p>
-              <div className="flex flex-col lg:flex-row gap-8 mt-10 ml-[20px]">
-                <div>
-                  <img src="src/upload/pr1.png" alt="" />
-                </div>
-                <div className="m-4">
-                  <p className="text-[15px] font-bold mb-5">Giường đôi</p>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <div className="flex items-center mb-1">
-                        <LayoutGrid className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          15m2
-                        </span>
-                      </div>
-                      <div className="flex items-center mb-1">
-                        <Wifi className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          Wifi miễn phí
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex items-center mb-1">
-                        <Bed className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          2 giường đơn
-                        </span>
-                      </div>
-                      <div className="flex items-center mb-1">
-                        <Bath className="w-4 h-4 mr-1 text-[#022747BD]" />
-                        <span className="text-[#022747BD] text-[15px]">
-                          Vòi sen và bồn tắm
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    onClick={openModal}
-                    className="text-[#022747BD] text-[12px] hover:underline focus:outline-none"
-                  >
-                    Ảnh phòng và chi tiết
-                  </button>
-                </div>
-                <div className="m-7">
-                  <div>
-                    <span className="text-2xl font-bold">899.000₫</span>
-                    <span className="text-gray-600 text-sm">/đêm</span>
-                  </div>
-                  <button className="border-[#0460B196] rounded border text-[#000000] font-bold w-full h-[47px] mt-2 hover:bg-[#0460B196]">
-                    Cập nhật
-                  </button>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
-          {/* moda detail */}
+          {/* modal detail */}
 
           {isModalOpen && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-              <div className="bg-white p-6 rounded-lg w-[90%] lg:w-[800px] relative">
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
+              <div className="bg-white p-6 rounded-lg w-full max-w-[800px] relative">
                 <button
                   className="absolute top-2 right-2 text-black text-xl"
                   onClick={closeModal}
@@ -401,70 +293,70 @@ const ProductDT = () => {
                   <X />
                 </button>
                 <h2 className="text-xl font-bold mb-4">Chi tiết ảnh phòng</h2>
-                <div className="flex justify-around gap-2">
+                <div className="flex flex-wrap justify-around gap-2">
                   {roomImages.map((image, index) => (
                     <img
                       key={index}
-                      className="w-[100px] lg:w-[200px] h-[75px] lg:h-[150px] object-cover"
+                      className="w-[100px] md:w-[200px] h-[75px] md:h-[150px] object-cover"
                       src={image}
                       alt={`Room ${index + 1}`}
                     />
                   ))}
                 </div>
-                <div className="grid grid-cols-2 lg:grid-cols-3 ml-[10px] lg:ml-[50px] mt-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3">
                   <div className="flex items-center mb-1">
                     <Wifi className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
                       Wifi miễn phí
                     </span>
                   </div>
                   <div className="flex items-center mb-1">
                     <Bath className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
                       Vòi Hoa sen Và Bồn Tắm
                     </span>
                   </div>
                   <div className="flex items-center mb-1">
                     <Snowflake className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
                       Điều Hòa
                     </span>
                   </div>
-
                   <div className="flex items-center mb-1">
                     <WashingMachine className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
                       Máy giặt
                     </span>
                   </div>
                   <div className="flex items-center mb-1">
                     <Armchair className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
                       Bàn Ghế
                     </span>
                   </div>
                   <div className="flex items-center mb-1">
                     <Martini className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
                       Mini Bar
                     </span>
                   </div>
-
                   <div className="flex items-center mb-1">
                     <Dumbbell className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
                       Phòng Gym
                     </span>
                   </div>
                   <div className="flex items-center mb-1">
                     <HandPlatter className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
                       Nhà Hàng
                     </span>
                   </div>
                   <div className="flex items-center mb-1">
                     <Coffee className="w-4 h-4 mr-1 text-[#022747BD]" />
-                    <span className="text-[#022747BD] text-[15px]">Càfe</span>
+                    <span className="text-[#022747BD] text-[13px] md:text-[15px]">
+                      Càfe
+                    </span>
                   </div>
                 </div>
               </div>
@@ -476,7 +368,7 @@ const ProductDT = () => {
           <div className="allEvaluate">
             <AllEvaluate />
           </div>
-          <div className="FormCmt ml-6">
+          <div className="FormCmt">
             <FormCmt />
           </div>
           <div className="similarHotel">
