@@ -9,13 +9,12 @@ const PreviousArrow = (props: any) => {
   const { onClick } = props;
   return (
     <button
-      className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10"
+      className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10 hover:bg-gray-100 transition-colors duration-200"
       onClick={onClick}
-      style={{ left: "10px" }} // Adjusted to move closer to Similar
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 text-black"
+        className="h-6 w-6 text-gray-800"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -36,13 +35,12 @@ const NextArrow = (props: any) => {
   const { onClick } = props;
   return (
     <button
-      className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10"
+      className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10 hover:bg-gray-100 transition-colors duration-200"
       onClick={onClick}
-      style={{ right: "10px" }} // Adjusted to move closer to Similar
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 text-black"
+        className="h-6 w-6 text-gray-800"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -59,12 +57,12 @@ const CardCarousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Number of cards to show at once
+    slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true, // Auto slide feature
-    autoplaySpeed: 3000, // Duration for auto slide
-    nextArrow: <NextArrow />, // Custom Next Arrow
-    prevArrow: <PreviousArrow />, // Custom Previous Arrow
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PreviousArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -84,33 +82,20 @@ const CardCarousel = () => {
   };
 
   return (
-    <div className="mt-11">
-      <div className="relative  ml-20">
-        <h3 className="text-center font-bold  text-[36px]">
+    <div className="mt-16 px-4 md:px-8 lg:px-16">
+      <div className="text-center mb-10">
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-800">
           Khách Sạn Tương Tự
         </h3>
-        <hr className=" w-[100px] ml-[540px] mt-2 bottom-0  border-black" />
+        <div className="w-24 h-1 bg-black mx-auto mt-4"></div>
       </div>
-      <div className="container mt-11 pl-6 relative">
+      <div className="relative">
         <Slider {...settings}>
-          <div className="px-[10px]">
-            <Similar />
-          </div>
-          <div className="px-[10px]">
-            <Similar />
-          </div>
-          <div className="px-[10px]">
-            <Similar />
-          </div>
-          <div className="px-[10px]">
-            <Similar />
-          </div>
-          <div className="px-[10px]">
-            <Similar />
-          </div>
-          <div className="px-[10px]">
-            <Similar />
-          </div>
+          {[1, 2, 3, 4, 5, 6].map((index) => (
+            <div key={index} className="px-2">
+              <Similar />
+            </div>
+          ))}
         </Slider>
       </div>
     </div>

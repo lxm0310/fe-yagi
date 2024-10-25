@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 type Props = {};
 
 const CategoryLocation = (props: Props) => {
   return (
-    <>
-      <div className="content grid grid-cols-3 gap-4 place-items-center p-[20px] mb-[20px] border border-gray-300 rounded-lg">
+    <div className="">
+      <div className="content grid grid-cols-3 gap-4 p-[20px] mb-[20px] border border-gray-300 rounded-lg max-w-[1200px]">
         {[
           { name: "SAPA - SA PA", image: "src/upload/1.png" },
           { name: "HẠ LONG", image: "src/upload/2.png" },
@@ -24,7 +25,7 @@ const CategoryLocation = (props: Props) => {
         ].map((location, index) => (
           <div
             key={index}
-            className="w-[330px] h-[165px] relative group shadow-lg transition-shadow duration-300 hover:shadow-2xl"
+            className="w-[330px] h-[156px] ml-[20px] relative group shadow-lg transition-shadow duration-300 hover:shadow-2xl"
             style={{
               backgroundImage: `url(${location.image})`,
               backgroundSize: "cover",
@@ -32,13 +33,16 @@ const CategoryLocation = (props: Props) => {
             }}
           >
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-            <p className="text-[40px] text-[#FFFFFF] text-center mt-[60px] transition-transform duration-300 group-hover:scale-110">
+            <Link
+              to={"/danhmuc"}
+              className="absolute inset-0 flex items-center justify-center text-[32px] text-white font-bold transition-transform duration-300 group-hover:scale-110"
+            >
               {location.name}
-            </p>
+            </Link>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

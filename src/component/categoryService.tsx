@@ -1,70 +1,39 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
 const CategoryService = (props: Props) => {
   return (
-    <>
-      <div className="container">
-        <div className="flex justify-between m-10 gap-[14px]">
+    <div className="container mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {[
+          { title: "Sang Trọng", image: "src/upload/sangtrong.png" },
+          { title: "Tiện Nghi", image: "src/upload/tiennghi.png" },
+          { title: "Lãng Mạn", image: "src/upload/langman.png" },
+          { title: "Phong Cách", image: "src/upload/phongcach.png" },
+          { title: "Thư Giãn", image: "src/upload/thugian.png" },
+        ].map((item, index) => (
           <div
-            style={{
-              backgroundImage: 'url("src/upload/sangtrong.png")',
-              backgroundSize: "cover",
-            }}
-            className="w-[266px] h-[266px] bg-center transform transition duration-500 hover:scale-110"
+            key={index}
+            className="relative overflow-hidden rounded-lg shadow-lg group"
           >
-            <p className="text-[36px] text-center mt-[85px] text-[#FFFFFF]">
-              Sang Trọng
-            </p>
+            <div
+              className="w-full h-64 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+              style={{ backgroundImage: `url("${item.image}")` }}
+            ></div>
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 transition-opacity duration-300 opacity-100 group-hover:opacity-80">
+              <Link
+                to={"/danhmuc"}
+                className="text-2xl font-bold text-white text-center"
+              >
+                {item.title}
+              </Link>
+            </div>
           </div>
-          <div
-            style={{
-              backgroundImage: 'url("src/upload/tiennghi.png")',
-              backgroundSize: "cover",
-            }}
-            className="w-[266px] h-[266px] bg-center transform transition duration-500 hover:scale-110"
-          >
-            <p className="text-[36px] text-center mt-[85px] text-[#FFFFFF]">
-              Tiện Nghi
-            </p>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("src/upload/langman.png")',
-              backgroundSize: "cover",
-            }}
-            className="w-[266px] h-[266px] bg-center transform transition duration-500 hover:scale-110"
-          >
-            <p className="text-[36px] text-center mt-[85px] text-[#FFFFFF]">
-              Lãng Mạn
-            </p>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("src/upload/phongcach.png")',
-              backgroundSize: "cover",
-            }}
-            className="w-[266px] h-[266px] bg-center transform transition duration-500 hover:scale-110"
-          >
-            <p className="text-[36px] text-center mt-[85px] text-[#FFFFFF]">
-              Phong Cách
-            </p>
-          </div>
-          <div
-            style={{
-              backgroundImage: 'url("src/upload/thugian.png")',
-              backgroundSize: "cover",
-            }}
-            className="w-[266px] h-[266px] bg-center transform transition duration-500 hover:scale-110"
-          >
-            <p className="text-[36px] text-center mt-[85px] text-[#FFFFFF]">
-              Thư Giãn
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

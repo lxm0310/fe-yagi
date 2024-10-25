@@ -16,6 +16,7 @@ import Introduce from "./static_page/Introduce";
 import Service from "./static_page/Service";
 import News from "./static_page/News";
 import Contact from "./static_page/Contact";
+import ErrorPage from "./component/error/errorpage";
 function App() {
   const Route = useRoutes([
     {
@@ -55,6 +56,10 @@ function App() {
     {
       path: "register",
       element: <Register />,
+    },
+    {
+      path: "*",
+      element: <ErrorPage />,
     },
   ]);
   return Route;
