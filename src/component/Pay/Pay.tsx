@@ -183,17 +183,13 @@ const Pay = () => {
                     </div>
                     <button
                       onClick={() => setIsOpen(false)}
-                      className="mt-4 ml-10 bg-[#0460B196] ;
- text-white py-2 px-4 rounded"
+                      className="mt-4 ml-10 bg-[#0460B196] ; text-white py-2 px-4 rounded"
                     >
                       Xác nhận
                     </button>
                   </div>
                 )}
-                <button
-                  className="mt-4 ml-4 items-center bg-[#0460B196] ;
- text-white py-2 px-16 text-[18px]  rounded"
-                >
+                <button className="mt-4 ml-4 items-center bg-[#0460B196] ; text-white py-2 px-16 text-[18px]  rounded">
                   Thay đổi
                 </button>
               </div>

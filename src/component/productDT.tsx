@@ -20,6 +20,7 @@ import FormComponent from "./formCmt";
 import FormCmt from "./formCmt";
 import Similar from "./similar";
 import CardCarousel from "./CardCarousel ";
+import { FaChevronDown, FaMinus, FaPlus } from "react-icons/fa";
 
 const ProductDT = () => {
   // Image sources for the slideshow
@@ -35,9 +36,16 @@ const ProductDT = () => {
     "src/upload/pr1.png",
     "src/upload/pr1.png",
   ];
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [rooms, setRooms] = useState(1);
+  const [adults, setAdults] = useState(1);
+  const [children, setChildren] = useState(0);
+  const totalGuests = adults + children;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const increment = (setter: any) => setter((prev: any) => prev + 1);
+  const decrement = (setter: any) =>
+    setter((prev: any) => (prev > 0 ? prev - 1 : 0));
   // Function to show the next image
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -167,22 +175,133 @@ const ProductDT = () => {
                   </span>
                 </div>
                 <div className="mt-4">
-                  <label className="block text-sm font-medium">
+                  <label className="block text-sm font-medium mb-2">
                     Check In-Out
                   </label>
-                  <input
-                    type="text"
-                    value="01/09/2024 - 10/09/2024"
-                    className="mt-1 p-2 border border-border rounded w-full"
-                  />
+                  <div className="flex gap-2">
+                    <input
+                      type="date"
+                      placeholder="Check in"
+                      className="p-2 border border-border rounded w-full text-sm"
+                    />
+                    <input
+                      type="date"
+                      placeholder="Check out"
+                      className="p-2 border border-border rounded w-full text-sm"
+                    />
+                  </div>
                 </div>
                 <div className="mt-4">
                   <label className="block text-sm font-medium">
                     Số lượng phòng và người
                   </label>
-                  <select className="mt-1 p-2 border border-border rounded w-full">
-                    <option>1 phòng - 4 người</option>
-                  </select>
+                  <div className="select-room mt-1 p-2 border border-border rounded w-full">
+                    <div
+                      className="flex items-center justify-between px-4 py-2 rounded-lg cursor-pointer font-montserrat text-[15px] font-semibold"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      <div className="flex items-center gap-2">
+                        <i className="fa-solid fa-users"></i>
+                        <span>
+                          {rooms} phòng - {totalGuests} khách
+                        </span>
+                      </div>
+                      <FaChevronDown />
+                    </div>
+                    {isOpen && (
+                      <div className="absolute bg-white border border-gray-300 w-[350px] rounded-lg mt-2 p-4 shadow-lg z-10">
+                        <div className="space-y-4">
+                          {/* Số phòng */}
+                          <div className="flex items-center justify-between">
+                            <label className="text-[15px] font-medium text-gray-700">
+                              Số phòng
+                            </label>
+                            <div className="flex items-center gap-3">
+                              <button
+                                onClick={() => decrement(setRooms)}
+                                className="counter-btn"
+                              >
+                                <FaMinus className="text-xs" />
+                              </button>
+                              <input
+                                type="number"
+                                value={rooms}
+                                readOnly
+                                className="w-12 text-center"
+                              />
+                              <button
+                                onClick={() => increment(setRooms)}
+                                className="counter-btn"
+                              >
+                                <FaPlus className="text-xs" />
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* Người lớn */}
+                          <div className="flex items-center justify-between">
+                            <label className="text-[15px] font-medium text-gray-700">
+                              Người lớn
+                            </label>
+                            <div className="flex items-center gap-3">
+                              <button
+                                onClick={() => decrement(setAdults)}
+                                className="counter-btn"
+                              >
+                                <FaMinus className="text-xs" />
+                              </button>
+                              <input
+                                type="number"
+                                value={adults}
+                                readOnly
+                                className="w-12 text-center"
+                              />
+                              <button
+                                onClick={() => increment(setAdults)}
+                                className="counter-btn"
+                              >
+                                <FaPlus className="text-xs" />
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* Trẻ em */}
+                          <div className="flex items-center justify-between">
+                            <label className="text-[15px] font-medium text-gray-700">
+                              Trẻ em
+                            </label>
+                            <div className="flex items-center gap-3">
+                              <button
+                                onClick={() => decrement(setChildren)}
+                                className="counter-btn"
+                              >
+                                <FaMinus className="text-xs" />
+                              </button>
+                              <input
+                                type="number"
+                                value={children}
+                                readOnly
+                                className="w-12 text-center"
+                              />
+                              <button
+                                onClick={() => increment(setChildren)}
+                                className="counter-btn"
+                              >
+                                <FaPlus className="text-xs" />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button
+                          onClick={() => setIsOpen(false)}
+                          className="w-full mt-4 bg-[#0460B196] text-white py-2 px-4 rounded hover:bg-[#0460B1] transition-colors"
+                        >
+                          Xác nhận
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <button className="bg-[#0460B196] text-[#FFFFFF] font-bold w-full h-[47px] mt-2">
                   Cập nhật
