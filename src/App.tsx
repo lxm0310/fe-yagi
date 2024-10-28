@@ -18,6 +18,7 @@ import News from "./static_page/News";
 import Contact from "./static_page/Contact";
 import ErrorPage from "./component/error/errorpage";
 function App() {
+  // test
   const Route = useRoutes([
     {
       path: "",
