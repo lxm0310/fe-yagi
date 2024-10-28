@@ -40,11 +40,13 @@ const Products = (props: Props) => {
         {hotels.map((hotel) => (
           <div key={hotel.id} className="bg-white rounded shadow">
             <div className="relative">
-              <img
-                src={hotel.image}
-                alt={hotel.name}
-                className="w-full h-48 object-cover rounded-t"
-              />
+              <Link to={"/products"}>
+                <img
+                  src={hotel.image}
+                  alt={hotel.name}
+                  className="w-full h-48 object-cover rounded-t"
+                />
+              </Link>
               <button
                 className="absolute top-2 right-2 bg-white p-1 rounded-full"
                 onClick={() => toggleFavorite(hotel.id)}
