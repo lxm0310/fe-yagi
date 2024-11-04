@@ -76,25 +76,25 @@ const Header = (props: Props) => {
                   Trang chủ
                 </Link>
                 <Link
-                  to="/gioithieu"
+                  to="/About"
                   className="hover:text-yellow-400 hover:underline"
                 >
                   Về chúng tôi
                 </Link>
                 <Link
-                  to="/dichvu"
+                  to="/Services"
                   className="hover:text-yellow-400 hover:underline"
                 >
                   Dịch vụ
                 </Link>
                 <Link
-                  to="/tintuc"
+                  to="/News"
                   className="hover:text-yellow-400 hover:underline"
                 >
                   Tin tức
                 </Link>
                 <Link
-                  to="/lienhe"
+                  to="/Contact"
                   className="hover:text-yellow-400 hover:underline"
                 >
                   Liên hệ
