@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Flatpickr from "react-flatpickr";
+import { FaBath, FaHotel, FaUsers, FaWifi } from 'react-icons/fa';
 import "flatpickr/dist/flatpickr.css";
 import "./Pay.css";
-import { FaChevronDown, FaPlus, FaMinus } from "react-icons/fa";
+import { FaChevronDown, FaPlus, FaMinus,FaBed } from "react-icons/fa";
 const Pay = () => {
   const [date, setDate] = useState([new Date(), new Date()]);
   const [rooms, setRooms] = useState(1);
@@ -37,7 +38,7 @@ const Pay = () => {
           <div className=" w-2/5 flex   flex-col items-center  border-[#DCD1D1] border-[0.5px] mt-24  ">
             <div className="p-6">
               <p className="font-montserrat text-[20px] font-medium leading-[19.5px] text-center mb-10 ">
-                PHÒNG CỦA BẠN
+                PHÒNG CỦA BẠN 
               </p>
               <img src="src/assets/img/item/sapa/room1_960x760.jpeg" alt="" />
               <p className="font-montserrat text-[15px] font-semibold leading-[18.29px] text-center m-10 ">
@@ -45,25 +46,25 @@ const Pay = () => {
               </p>
               <div className="grid grid-cols-2 gap-5 pl-8 ">
                 <div className="">
-                  <i className="fa-solid fa-hotel text-[15px] text-[#0460B196]"></i>
+                <FaHotel className="text-[15px] text-[#0460B196]" />
                   <span className="text-[15px] text-[#022747BD] ml-2">
                     15m2
                   </span>
                 </div>
                 <div className=" ">
-                  <i className="fa-solid fa-bed text-[15px] text-[#0460B196]"></i>
+                <FaBed className="text-[15px] text-[#0460B196]" />
                   <span className="text-[15px] text-[#022747BD] ml-2">
                     2 giường đơn
                   </span>
                 </div>
                 <div className="">
-                  <i className="fa-solid fa-wifi text-[15px] text-[#0460B196]"></i>
+                <FaWifi className="text-[15px] text-[#0460B196]" />
                   <span className="text-[15px] text-[#022747BD] ml-2">
                     Wifi miễn phí
                   </span>
                 </div>
                 <div className="">
-                  <i className="fa-solid fa-bath text-[15px] text-[#0460B196]"></i>
+                <FaBath className="text-[15px] text-[#0460B196]" />
                   <span className="text-[15px] text-[#022747BD] ml-2">
                     Vòi sen và bồn tắm
                   </span>
@@ -75,15 +76,18 @@ const Pay = () => {
               <p className="font-montserrat text-[20px] font-semibold leading-[19.5px] text-center my-3 ">
                 Check In-Out
               </p>
-              <div className="relative flex flex-row ">
-                <i className="fa-regular fa-calendar-days absolute left-24 bottom-3 text-center"></i>
-                <Flatpickr
-                  className=" font-montserrat text-[15px] text-center font-semibold leading-[18.29px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
-                  value={date}
-                  onChange={setDate}
-                  options={{ mode: "range", dateFormat: "d-m-Y" }}
-                />
-              </div>
+              <div className="flex gap-2">
+                    <input
+                      type="date"
+                      placeholder="Check in"
+                      className="p-2 border border-border rounded w-full text-sm"
+                    />
+                    <input
+                      type="date"
+                      placeholder="Check out"
+                      className="p-2 border border-border rounded w-full text-sm"
+                    />
+                  </div>
             </div>
             <div className="border-b pb-4 w-full flex flex-col items-center justify-center  border-solid border-[#D9D9D9]">
               <div className=" w-full ">
@@ -98,7 +102,7 @@ const Pay = () => {
                   onClick={() => setIsOpen(!isOpen)}
                 >
                   {" "}
-                  <i className="fa-solid fa-users  left-40 bottom-4 text-center"></i>
+                  <FaUsers className="left-40 bottom-4 text-center text-[15px] text-[#0460B196]" />
                   <span>
                     {rooms} phòng - {totalGuests} khách
                   </span>
@@ -259,8 +263,8 @@ const Pay = () => {
                     htmlFor="lastName"
                     className="font-montserrat text-base font-medium leading-[19.5px] text-left mb-2"
                   >
-                    Họ
-                    <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                    Họ <span className="text-red-600">*</span>
+                    
                   </label>
                   <input
                     id="lastName"
@@ -273,8 +277,8 @@ const Pay = () => {
                     htmlFor="firstName"
                     className="font-montserrat text-base font-medium leading-[19.5px] text-left mb-2"
                   >
-                    Tên
-                    <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                    Tên <span className="text-red-600">*</span>
+                   
                   </label>
                   <input
                     id="firstName"
@@ -289,9 +293,9 @@ const Pay = () => {
                   htmlFor=""
                   className="font-montserrat text-base font-medium leading-[19.5px] text-left"
                 >
-                  Email
+                  Email <span className="text-red-600">*</span>
                 </label>
-                <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                
               </div>
               <input
                 id="email"
@@ -303,9 +307,9 @@ const Pay = () => {
                   htmlFor=""
                   className="font-montserrat text-base font-medium leading-[19.5px] text-left"
                 >
-                  Số điện thoại
+                  Số điện thoại <span className="text-red-600">*</span>
                 </label>
-                <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+               
               </div>
               <input
                 id="number"

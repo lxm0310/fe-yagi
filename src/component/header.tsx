@@ -71,7 +71,7 @@ const Header = (props: Props) => {
                 isMenuOpen ? "block" : "hidden"
               } absolute md:relative top-full left-0 w-full md:w-auto bg-[#00396B96] md:bg-transparent`}
             >
-              <div className="flex flex-col md:flex-row text-white text-[16px] md:text-[24px] text-center space-y-4 md:space-y-0 md:space-x-20 p-4 md:p-0">
+              <div className="flex flex-col md:flex-row font-judson text-white text-[25px] md:text-[24px] text-center space-y-4 md:space-y-0 md:space-x-20 p-4 md:p-0">
                 <Link to="/" className="hover:text-yellow-400 hover:underline">
                   Trang chủ
                 </Link>

@@ -21,7 +21,7 @@ const Service = (props: Props) => {
           }}
           className="absolute w-full h-[399px] "
         >
-          <p className="italic text-[36px] text-center mt-[150px] text-[#FFFFFF]">
+          <p className="font-taviraj text-[61px]  italic font-extrabold  text-center mt-[150px] text-[#FFFFFF]">
             Giải trí
           </p>
         </div>
@@ -30,7 +30,7 @@ const Service = (props: Props) => {
       <div className="content mt-[150px]">
         <div className="max-w-4xl mx-auto p-4 font-sans">
           <section className="mb-8 max-w-3xl ml-10">
-            <p className="mb-4 text-xl tracking-wider text-justify ">
+            <p className="mb-4 font-jaldi text-xl tracking-wider text-justify ">
               Với những lợi thế sẵn có về nguồn lực cũng như nỗ lực không ngừng
               trong việc giới thiệu tới khách hàng những dịch vụ du lịch, giải
               trí hiện đại hàng đầu, YaGi Group đã và đang phát triển nhiều hạng
@@ -41,7 +41,7 @@ const Service = (props: Props) => {
               bộ trò chơi điện tử có thưởng.
             </p>
           </section>
-          <h1 className="text-3xl font-bold text-center  mb-6 ">Hình Ảnh</h1>
+          <h1 className="font-taviraj text-[40px] leading-81.89px font-semibold text-center  mb-6  ">Hình Ảnh</h1>
           <div className="grid grid-cols-2 ">
             {imageData.map((item, index) => (
               <div key={index} className="flex justify-center">

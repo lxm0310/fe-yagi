@@ -20,7 +20,7 @@ const Love = (props: Props) => {
             }}
             className="absolute inset-0 flex items-center justify-center"
           >
-            <p className="italic text-3xl text-center text-white">
+            <p className="font-taviraj text-[61px]  italic font-extrabold  text-center mt-[150px] text-[#FFFFFF]">
               Tận hưởng không gian thư giãn
             </p>
           </div>

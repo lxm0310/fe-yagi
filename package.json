@@ -11,6 +11,7 @@
     "db": "npx json-server db.json -m ./node_modules/json-server-auth"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "axios": "^1.7.2",
     "flatpickr": "^4.6.13",
     "json-server": "^0.17.4",
@@ -47,20 +48,5 @@
     "tailwindcss": "^3.4.4",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
-   
-    
-    
-    
-    
-    
-   
-    
-    
-    
-    
-    
-    
-  
-
   }
 }
