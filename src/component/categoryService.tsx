@@ -24,7 +24,7 @@ const CategoryService = (props: Props) => {
             ></div>
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 transition-opacity duration-300 opacity-100 group-hover:opacity-80">
               <Link
-                to={"/danhmuc"}
+                to={"/Category"}
                 className="text-2xl font-bold text-white text-center"
               >
                 {item.title}
