@@ -37,7 +37,7 @@ const Contact = (props: Props) => {
             }}
             className="absolute w-full h-[399px] "
           >
-            <p className="italic text-[36px] text-center mt-[150px] text-[#FFFFFF]">
+            <p className="font-taviraj text-[61px]  italic font-extrabold  text-center mt-[150px] text-[#FFFFFF]">
               Liên hệ
             </p>
           </div>
@@ -45,7 +45,7 @@ const Contact = (props: Props) => {
         <div className="content mt-[150px]">
           <div className="max-w-6xl mx-auto p-4 flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2">
-              <h1 className="text-2xl font-bold text-orange-500 mb-4">
+              <h1 className="font-taviraj text-[41px] font-bold text-[#ED9A1F] mb-4">
                 Tổng Công ty Dịch vụ
                 <br />
                 Khách sạn YaGi

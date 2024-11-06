@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/flatpickr.css";
 
-import { FaChevronDown, FaPlus, FaMinus } from "react-icons/fa";
+import { FaChevronDown, FaPlus, FaMinus, FaUsers, FaBath, FaWifi, FaBed, FaHotel } from "react-icons/fa";
 const Detailpay = () => {
   const [date, setDate] = useState([new Date(), new Date()]);
   const [rooms, setRooms] = useState(1);
@@ -45,25 +45,25 @@ const Detailpay = () => {
               </p>
               <div className="grid grid-cols-2 gap-5 pl-8 ">
                 <div className="">
-                  <i className="fa-solid fa-hotel text-[15px] text-[#0460B196]"></i>
+                <FaHotel className="text-[15px] text-[#0460B196]" />
                   <span className="text-[15px] text-[#022747BD] ml-2">
                     15m2
                   </span>
                 </div>
                 <div className=" ">
-                  <i className="fa-solid fa-bed text-[15px] text-[#0460B196]"></i>
+                <FaBed className="text-[15px] text-[#0460B196]" />
                   <span className="text-[15px] text-[#022747BD] ml-2">
                     2 giường đơn
                   </span>
                 </div>
                 <div className="">
-                  <i className="fa-solid fa-wifi text-[15px] text-[#0460B196]"></i>
+                <FaWifi className="text-[15px] text-[#0460B196]" />
                   <span className="text-[15px] text-[#022747BD] ml-2">
                     Wifi miễn phí
                   </span>
                 </div>
                 <div className="">
-                  <i className="fa-solid fa-bath text-[15px] text-[#0460B196]"></i>
+                <FaBath className="text-[15px] text-[#0460B196]" />
                   <span className="text-[15px] text-[#022747BD] ml-2">
                     Vòi sen và bồn tắm
                   </span>
@@ -92,7 +92,7 @@ const Detailpay = () => {
               <div className="relative  ">
                 <div className="flex items-center justify-around rounded-lg w-60 p-2.5 font-montserrat text-[15px]  font-semibold">
                   {" "}
-                  <i className="fa-solid fa-users  left-40 bottom-4 text-center"></i>
+                  <FaUsers className="left-40 bottom-4 text-center text-[15px] text-[#0460B196]" />
                   <span>
                     {rooms} phòng - {totalGuests} khách
                   </span>
@@ -145,7 +145,7 @@ const Detailpay = () => {
                     className="font-montserrat text-base font-medium leading-[19.5px] text-left mb-2"
                   >
                     Họ
-                    <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                    <span className="text-red-600">*</span>
                   </label>
                   <input
                     id="lastName"
@@ -159,7 +159,7 @@ const Detailpay = () => {
                     className="font-montserrat text-base font-medium leading-[19.5px] text-left mb-2"
                   >
                     Tên
-                    <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                    <span className="text-red-600">*</span>
                   </label>
                   <input
                     id="firstName"
@@ -176,7 +176,7 @@ const Detailpay = () => {
                 >
                   Email
                 </label>
-                <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                <span className="text-red-600">*</span>
               </div>
               <input
                 id="email"
@@ -190,7 +190,7 @@ const Detailpay = () => {
                 >
                   Số điện thoại
                 </label>
-                <i className="fa-solid fa-star-of-life text-red-500 ml-1 text-[7px] absolute top-1"></i>
+                <span className="text-red-600">*</span>
               </div>
               <input
                 id="number"

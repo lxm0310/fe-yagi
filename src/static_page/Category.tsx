@@ -19,7 +19,7 @@ const Category = (props: Props) => {
             }}
             className="absolute w-full h-[399px] "
           >
-            <p className="italic text-[36px] text-center mt-[150px] text-[#FFFFFF]">
+            <p className="font-taviraj text-[61px]  italic font-extrabold  text-center mt-[150px] text-[#FFFFFF]">
               Sang Trọng
             </p>
           </div>

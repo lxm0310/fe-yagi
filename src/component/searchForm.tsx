@@ -45,44 +45,14 @@ const HotelSearchForm = () => {
               type="date"
               className="w-[180px] border border-gray-300 rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
-            <span className="absolute inset-y-0 left-2 flex items-center">
-              <svg
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8 7V3M16 7V3M5 10h14M5 16h14M5 21h14"
-                ></path>
-              </svg>
-            </span>
+           
           </div>
           <div className="relative">
             <input
               type="date"
               className="w-[180px] border border-gray-300 rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
-            <span className="absolute inset-y-0 left-2 flex items-center">
-              <svg
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8 7V3M16 7V3M5 10h14M5 16h14M5 21h14"
-                ></path>
-              </svg>
-            </span>
+            
           </div>
         </div>
 
