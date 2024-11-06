@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Similar = () => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden max-w-sm mx-auto">
+    <div>
       <div className="relative">
         <img
           src="https://via.placeholder.com/300x200"

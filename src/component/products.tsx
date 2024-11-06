@@ -13,7 +13,7 @@ interface Hotel {
   image: string;
 }
 
-const hotels: Hotel[] = Array(8)
+const hotels: Hotel[] = Array(1)
   .fill(null)
   .map((_, index) => ({
     id: index + 1,
@@ -36,7 +36,7 @@ const Products = (props: Props) => {
   };
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div>
         {hotels.map((hotel) => (
           <div key={hotel.id} className="bg-white rounded shadow">
             <div className="relative">

@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Similar from "./similar";
+import Products from "./products";
 
 // Custom Arrow component for left button
 const PreviousArrow = (props: any) => {
@@ -92,8 +93,11 @@ const CardCarousel = () => {
       <div className="relative">
         <Slider {...settings}>
           {[1, 2, 3, 4, 5, 6].map((index) => (
-            <div key={index} className="px-2">
-              <Similar />
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-md overflow-hidden max-w-sm mx-auto px-2"
+            >
+              <Products />
             </div>
           ))}
         </Slider>
